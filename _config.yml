@@ -1,0 +1,60 @@
+# Jekyll configuration
+
+name: Penn Libraries Jekyll Theme
+description: Theme for U. Penn Libraries
+
+# url is currently only used only for the RSS feed in feed.xml
+url: https://KislakCenter.github.io/penn-libraries-jekyll-theme
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: /penn-libraries-jekyll-theme
+
+# These can be '' to hide the Github or Gitlab nav buttons
+github: 'KislakCenter/penn-libraries-jekyll-theme'
+gitlab:
+
+# Define the pages to appear as links in the navigation bar in
+# the order given below. Each header has a `path` [required]
+# and `title` [optional].
+#
+# Use `title` to override the title defined in the page's
+# YAML header.
+#
+# NOTE: If no `title` is given in this list or the page's YAML header,
+# the link will not appear in the navigation bar.
+header_pages:
+  - path: links.html
+    title: Links
+  - path: archive.html
+    title: Archive
+  - path: about.html
+    title: About
+  - path: feed.xml
+    title: RSS
+  - path: search.html
+    title: Search
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: ''
+
+# The 'comments' setting enables comments. You'll need to select either
+# disqus or isso below to choose a comment system. Individual posts can
+# override 'comments' to disable on a post-by-post basis.
+comments: true
+
+# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
+isso: ''
+
+# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
+disqus: ''
+
+permalink: /:year/:month/:title
+paginate: 3
+
+highlighter: rouge
+markdown: kramdown
+gems: ['jekyll-paginate']
+
+exclude: ['README.md', 'LICENSE', '/node_modules']

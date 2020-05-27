@@ -1,0 +1,101 @@
+
+/*
+Theme colors defined by Upenn Web style guide
+https://home.www.upenn.edu/about/styleguide
+*/
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+:root {
+  --theme-textfont: 'Open Sans',serif;
+  --theme-blue-primary: #01256e;
+  --theme-blue-darkest: #000f3a;
+  --theme-blue-lightest: #82afd3;
+  --theme-red-primary: #95001a;
+  --theme-yellow-primary: #f2c100;
+  --theme-orange-primary: #c35a00;
+
+}
+
+/* "Gentium Basic",serif */
+
+
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-family: var(--theme-textfont);
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    color: var(--theme-blue-lightest);
+}
+
+.navbar {
+  font-family: "Gentium Basic",serif;
+
+}
+.navbar-inverse .navbar-nav>.active>a{
+    color: #fff;
+    background-color: var(--theme-blue-darkest);
+    text-transform: uppercase;
+    font-family: var(--theme-textfont);
+}
+ .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+   color:var(--theme-yellow-primary);
+   background-color: var(--theme-blue-darkest);
+}
+
+.navbar-inverse .navbar-brand {
+    color: var(--theme-blue-lightest);
+    font-size: 24px;
+
+}
+
+
+
+.navbar-inverse {
+  background-color: var(--theme-blue-darkest);
+  border-color: var(--theme-blue-primary);
+}
+
+.sidebar h1 {
+    color: var(--theme-blue-primary);
+    font-size: 1.3em;
+}
+
+.sidebar a, a {
+    color: #3273B8;
+}
+
+.sidebar li {
+    margin-top: .7em;
+    line-height: 1em;
+}
+
+.sidebar a:hover {
+    color: #3071a9;
+}
+
+.container-left {
+    margin: 0;
+}
+
+.well h1 {
+    color: var(--theme-blue-primary);
+    font-size: 1.3em;
+}
+
+.author {
+    color: var(--theme-blue-primary);
+}
+
+.author a {
+    color: var(--theme-blue-primary);
+}

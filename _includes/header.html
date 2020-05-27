@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
+{% include isso-comments.html %}
+</head>
+
+<body>
+
+
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.library.upenn.edu/"><img alt="logo" src="{{ site.baseurl }}/images/logo.png" width=75px height=25px></a>
+      </a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+                    {% if site.header_pages %}
+                      {% for header in site.header_pages %}
+                        <!-- Assign to the page variable the first page from site.pages where page.path == header_path. -->
+                        {% assign page = site.pages | where: 'path', header.path | first %}
+                        {% if header.title %}
+                          {% assign header_title = header.title %}
+                        {% else %}
+                          {% assign header_title = page.title %}
+                        {% endif %}
+                        {% if header_title %}
+                          <li class="active"><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ header_title | escape }}</a></li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                    <!-- START GITHUB GITLAB links -->
+                    <!-- Remove thse lines to remove github/gitlab URL from header -->
+                    {% if site.gitlab %}
+                      <li class="active"><a href="https://gitlab.com/{{ site.gitlab }}">Gitlab</a></li>
+                    {% endif %}
+                    {% if site.github %}
+                      <li class="active"><a href="https://github.com/{{ site.github }}">Github</a></li>
+                    {% endif %}
+                    <!-- END GITHUB GITLAB links -->
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
